@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <title>Pop UP Chat</title>
+</head>
+<body>
+    
+<div class="wrapper">
+  <div class="container">
+      <!-- Chat -->
+
+      <div class="chat-box" id="chat-box">
+        <span class="close" onclick="closeChat()">X</span>
+
+        <div class="avatar">
+
+        </div>
+        <p class="username">Oliver Aleksander</p>
+
+        <div class="dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+           </div>
+
+           <form action="">
+               <textarea placeholder="Send Oliver a message"></textarea>
+               <button class="send-btn">
+                   Send
+               </button>
+           </form>
+        </div>
+
+          <!-- Message Button-->
+          <div class="msg-btn" onclick="openMsgBox()">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+      </div>
+     </div>
+ </div>
+</body>
+  <script>
+    // opening chat 
+      function openMsgBox(){
+          // Hiding message button when we open chat
+          document.querySelector('.msg-btn').style.opacity = '0';
+
+
+          // opening chat box 
+          document.querySelector('.chat-box').style.clipPath = "circle(75%)";
+          document.querySelector('.msg-btn').style.transitionDelay = '0s';
+      }
+      // Close Chat Box
+        function closeChat(){
+            // using clip path to make the chat box disappear
+            document.querySelector('.chat-box').style.clipPath = "circle(0% at 90% 95%)";
+
+            // Displaying message button 
+            document.querySelector('.msg-btn').style.opacity = '1';
+
+            // Applying transition delay 
+            document.querySelector('.msg-btn').style.transitionDelay = '0.5s';
+        }
+           
+  </script>
+</html>
